@@ -11,8 +11,8 @@ import Alamofire
 
 class AuthService
 {
-    static let instance = AuthService()
-    
+    static let instance = AuthService() //Singleton
+    //At runtime, you use UserDefaults objects to read the defaults that your app uses from a user’s defaults database. UserDefaults caches the information to avoid having to open the user’s defaults database each time you need a default value
     let defaults = UserDefaults.standard
     
     var isLoggedin : Bool{
@@ -21,9 +21,11 @@ class AuthService
         }
         set{
             defaults.set(newValue, forKey: LOGGED_IN_KEY)
+            
         }
         
     }
+    
     var authToken:String
     {
         get
@@ -46,6 +48,10 @@ class AuthService
             defaults.set(newValue, forKey: USER_EMAIL)
         }
     }
+    
+    
+    //@escaping -> When passing a closure as the function argument, the closure is being preserve to be execute later and function’s body gets executed
+    
     func registerUser(email: String, password: String , completion: @escaping CompletionHandler)
     {
        let lowercaseEmail = email.lowercased()

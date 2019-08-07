@@ -10,6 +10,7 @@ import UIKit
 @IBDesignable
 class RoundedButton: UIButton {
 
+    //IB Inspectable Var is nothing but a public variable that can be edited in the inspector of the interface builder.Don't get Confused!
     @IBInspectable var cornerRadius : CGFloat = 5.0
         {
         didSet{

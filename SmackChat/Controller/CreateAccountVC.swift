@@ -27,8 +27,10 @@ class CreateAccountVC: UIViewController {
     
     @IBAction func generateBgPressed(_ sender: Any) {
     }
+    
     @IBAction func chooseAvatarPressed(_ sender: Any) {
     }
+    
     @IBAction func createAccountPressed(_ sender: Any) {
         guard let email = emailText.text, emailText.text != "" else{return}
         guard let pass = passText.text, passText.text != "" else{return}
