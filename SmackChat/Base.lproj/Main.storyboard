@@ -220,8 +220,8 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvi-Bu-V6S">
-                                        <rect key="frame" x="85" y="23" width="69" height="29.333333333333329"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <rect key="frame" x="85" y="26" width="69" height="23.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -266,7 +266,7 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4m-79-LXL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4m-79-LXL" customClass="RoundedButton" customModule="SmackChat" customModuleProvider="target">
                                 <rect key="frame" x="82" y="371" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.29411764709999999" green="0.46274509800000002" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -328,7 +328,7 @@
                                     <constraint firstAttribute="width" constant="250" id="GIn-4W-ehu"/>
                                     <constraint firstAttribute="height" constant="30" id="dq4-KL-3Id"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" red="0.29411764709999999" green="0.46274509800000002" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -376,7 +376,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K0P-aR-KVD">
                                         <rect key="frame" x="0.0" y="171" width="250" height="3"/>
@@ -388,7 +388,7 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mnj-Lq-mnJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mnj-Lq-mnJ" customClass="RoundedButton" customModule="SmackChat" customModuleProvider="target">
                                 <rect key="frame" x="82" y="564" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.29411764709999999" green="0.46274509800000002" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -399,6 +399,9 @@
                                 <state key="normal" title="CREATE ACCOUNT">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="createAccountPressed:" destination="LPi-Z6-10M" eventType="touchUpInside" id="ZLe-CX-kTp"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="KFd-Rt-lTI">
                                 <rect key="frame" x="147" y="349" width="120" height="120"/>
@@ -416,6 +419,9 @@
                                 <state key="normal" title="Choose Avatar">
                                     <color key="titleColor" red="0.2333478326" green="0.73390733090000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="chooseAvatarPressed:" destination="LPi-Z6-10M" eventType="touchUpInside" id="wtf-0k-RP0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ma-O4-mrP">
                                 <rect key="frame" x="82" y="504" width="250" height="50"/>
@@ -429,6 +435,7 @@
                                 </state>
                                 <connections>
                                     <action selector="createAccountPressed:" destination="Oxb-iJ-Nzd" eventType="touchUpInside" id="ual-R9-mwJ"/>
+                                    <action selector="generateBgPressed:" destination="LPi-Z6-10M" eventType="touchUpInside" id="a9P-W3-v56"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -453,6 +460,10 @@
                         <viewLayoutGuide key="safeArea" id="wZ2-pj-rit"/>
                     </view>
                     <connections>
+                        <outlet property="emailText" destination="YJe-h8-KGQ" id="Omq-tx-7ol"/>
+                        <outlet property="passText" destination="l4h-f0-U3C" id="33W-cJ-8fD"/>
+                        <outlet property="userImage" destination="KFd-Rt-lTI" id="Gf8-Qp-1Bx"/>
+                        <outlet property="usernameText" destination="Xsw-QA-tYU" id="vxY-iS-z6A"/>
                         <segue destination="xHi-zE-kH9" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="NUN-dp-2lH"/>
                     </connections>
                 </viewController>
